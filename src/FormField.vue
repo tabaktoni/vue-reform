@@ -1,44 +1,4 @@
 <template>
-  <validation-provider
-    v-slot="veeProps"
-    ref="validationProvider"
-    v-bind="$attrs"
-    :vid="name"
-    :name="name"
-    class="reform-field"
-    tag="div">
-    <label
-      :class="{
-        'reform-invalid': veeProps.invalid,
-        'reform-dirty': veeProps.dirty,
-        'reform-required': veeProps.required,
-        'reform-changed': veeProps.changed,
-        'reform-touched': veeProps.touched,
-        'reform-pending': veeProps.pending
-      }"
-      data-testid="label">
-      <slot name="label" v-bind="{ ...veeProps, value }">
-        <div v-if="label" class="reform-label">{{ label }}</div>
-      </slot>
-      <div class="reform-control">
-        <slot name="icon" v-bind="{ ...veeProps, value }"></slot>
-        <slot
-          name="input" :on="{ input }" v-bind="{ ...veeProps, value }">
-          <input
-            @input="input($event.target.value)"
-            :value="value"
-            :placeholder="placeholder"
-            class="reform-input"
-            data-testid="default-input">
-        </slot>
-      </div>
-    </label>
-    <slot name="error" v-bind="{ ...veeProps, value }">
-      <div class="reform-error">
-        {{ veeProps.errors[0] }}
-      </div>
-    </slot>
-  </validation-provider>
 </template>
 
 <script>

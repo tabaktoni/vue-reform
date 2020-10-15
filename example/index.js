@@ -1,4 +1,4 @@
-import * as VueReform from '../src';
+import * as Vuetipac from '../src';
 import App from './App.vue';
 import Vue from 'vue';
 
